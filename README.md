@@ -53,6 +53,8 @@ abbr --show | grep dstopa
 | `dcin`       | `docker container inspect`  |
 | `dcls`       | `docker container ls`       |
 | `dclsa`      | `docker container ls -a`    |
+| `dps`        | `docker ps`                 |
+| `dpsa`       | `docker ps -a`              |
 | `dlo`        | `docker container logs`     |
 | `dpo`        | `docker container port`     |
 | `dr`         | `docker container run`      |
