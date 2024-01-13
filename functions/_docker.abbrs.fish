@@ -8,12 +8,15 @@ function _docker.abbrs -d "Initialize Docker abbreviations"
     abbr -a -g dis        docker images
     abbr -a -g dipu       docker image push
     abbr -a -g dirm       docker image rm
+    abbr -a -g ddrmi      'docker rmi (docker images --filter "dangling=true" -q --no-trunc)' # remove all unused images
     abbr -a -g dit        docker image tag
 
     # Container
     abbr -a -g dcin       docker container inspect
     abbr -a -g dcls       docker container ls
     abbr -a -g dclsa      docker container ls -a
+    abbr -a -g dps        docker ps
+    abbr -a -g dpsa       docker ps -a
     abbr -a -g dlo        docker container logs
     abbr -a -g dpo        docker container port
     abbr -a -g dr         docker container run
