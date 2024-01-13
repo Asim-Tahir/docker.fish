@@ -8,6 +8,7 @@ function _docker.abbrs -d "Initialize Docker abbreviations"
     abbr -a -g dis        docker images
     abbr -a -g dipu       docker image push
     abbr -a -g dirm       docker image rm
+    abbr -a -g ddrmi      'docker rmi (docker images --filter "dangling=true" -q --no-trunc)' # remove all unused images
     abbr -a -g dit        docker image tag
 
     # Container

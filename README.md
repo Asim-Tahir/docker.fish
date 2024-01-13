@@ -36,15 +36,16 @@ abbr --show | grep dstopa
 
 ### Image
 
-| Abbreviation | Command                |
-| ------------ | ---------------------- |
-| `dib`        | `docker image build`   |
-| `dii`        | `docker image inspect` |
-| `dils`       | `docker image ls`      |
-| `dis`        | `docker images`        |
-| `dipu`       | `docker image push`    |
-| `dirm`       | `docker image rm`      |
-| `dit`        | `docker image tag`     |
+| Abbreviation | Command                      |
+| ------------ | ---------------------------- |
+| `dib`        | `docker image build`         |
+| `dii`        | `docker image inspect`       |
+| `dils`       | `docker image ls`            |
+| `dis`        | `docker images`              |
+| `dipu`       | `docker image push`          |
+| `dirm`       | `docker image rm`            |
+| `ddrmi`      | remove all unused images[^1] |
+| `dit`        | `docker image tag`           |
 
 ### Container
 
@@ -90,9 +91,9 @@ abbr --show | grep dstopa
 
 | Abbreviation | Command                         |
 | ------------ | ------------------------------- |
-| `dpl`[^1]    | `docker pull`                   |
+| `dpl`[^2]    | `docker pull`                   |
 | `dbl`        | `docker build`                  |
-| `dstopa`[^2] | stop all running containers[^3] |
+| `dstopa`[^3] | stop all running containers[^4] |
 | `dtop`       | `docker top`                    |
 
 # Credit
@@ -112,6 +113,7 @@ Base structure heavily inspired from [`jhillyerd/plugin-git`](https://github.com
 [fisher]: https://github.com/jorgebucaran/fisher
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
-[^1]: The original abbreviation in [`Oh My Zsh`][omz]'s [Docker plugin][omz-docker-plugin] for the `docker pull` command is [`dpu`](https://github.com/ohmyzsh/ohmyzsh/blob/7d5e12500a2ba0b575ffafcbb516568973528730/plugins/docker/docker.plugin.zsh#L19) but renamed as `dpl` is more meaningful.
-[^2]: The original abbreviation in [`Oh My Zsh`][omz]'s [Docker plugin][omz-docker-plugin] for the `docker stop (docker ps -q)` command is [`dsta`](https://github.com/ohmyzsh/ohmyzsh/blob/7d5e12500a2ba0b575ffafcbb516568973528730/plugins/docker/docker.plugin.zsh#L26C7-L26C11) but renamed as `dstopa` is more meaningful.
-[^3]: `docker stop (docker ps -q)` command stops all running containers.
+[^1]: `docker rmi (docker images --filter "dangling=true" -q --no-trunc)` command removes all dangling images, which are untagged images that are not referenced by any container.
+[^2]: The original abbreviation in [`Oh My Zsh`][omz]'s [Docker plugin][omz-docker-plugin] for the `docker pull` command is [`dpu`](https://github.com/ohmyzsh/ohmyzsh/blob/7d5e12500a2ba0b575ffafcbb516568973528730/plugins/docker/docker.plugin.zsh#L19) but renamed as `dpl` is more meaningful.
+[^3]: The original abbreviation in [`Oh My Zsh`][omz]'s [Docker plugin][omz-docker-plugin] for the `docker stop (docker ps -q)` command is [`dsta`](https://github.com/ohmyzsh/ohmyzsh/blob/7d5e12500a2ba0b575ffafcbb516568973528730/plugins/docker/docker.plugin.zsh#L26C7-L26C11) but renamed as `dstopa` is more meaningful.
+[^4]: `docker stop (docker ps -q)` command stops all running containers.
